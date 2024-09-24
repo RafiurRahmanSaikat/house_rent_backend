@@ -22,7 +22,12 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 TIME_ZONE = "Asia/Dhaka"
 USE_TZ = True
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "*",
+    "https://*.127.0.0.1",
+    "https://house-rent-backend.onrender.com",
+    "https://house-rent-ease.netlify.app",
+]
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
