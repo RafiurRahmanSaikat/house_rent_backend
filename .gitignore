@@ -1,0 +1,92 @@
+# Django specific
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.pdb
+*.egg-info
+*.idea/
+*.vscode/
+*.swp
+*.swo
+
+# Django static files
+staticfiles/
+
+# Django migrations
+*/migrations/*
+
+# Python
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# Virtualenv
+env/
+venv/
+ENV/
+.venv/
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# macOS
+.DS_Store
+
+# Node Modules
+node_modules/
+
+# React build output
+build/
+public/
+
+# Docker
+*.docker
+docker-compose.override.yml
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.tox/
+.pytest_cache/
+
+# Editor and IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.envrc
+
+# Render Deployment
+render.yaml
+
+# Testing
+.pytest_cache/
+nosetests.xml
+coverage.xml
+.tox/
