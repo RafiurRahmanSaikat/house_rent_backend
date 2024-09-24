@@ -107,20 +107,22 @@ class UserLoginAPIView(APIView):
             password = serializer.validated_data["password"]
             user = authenticate(username=username, password=password)
             if user:
-                token, created = Token.objects.get_or_create(user=user)
-                login(request, user)
-                return Response(
-                    {
-                        "token": token.key,
-                        "user": user.username,
-                    },
-                    status=status.HTTP_200_OK,
-                )
-            else:
-                return Response(
-                    {"error": "Invalid credentials"},
-                    status=status.HTTP_401_UNAUTHORIZED,
-                )
+                user_account = UserAccount.objects.get(user=user)
+                if user_account.is_verified is True:
+                    token, created = Token.objects.get_or_create(user=user)
+                    login(request, user)
+                    return Response(
+                        {
+                            "token": token.key,
+                            "user": user.username,
+                        },
+                        status=status.HTTP_200_OK,
+                    )
+                else:
+                    return Response(
+                        {"error": "Invalid credentials"},
+                        status=status.HTTP_401_UNAUTHORIZED,
+                    )
         return Response({serializer.errors}, status.HTTP_400_BAD_REQUEST)
 
 

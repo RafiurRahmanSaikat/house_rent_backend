@@ -77,6 +77,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "rent_ease.urls"
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
