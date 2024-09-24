@@ -28,11 +28,13 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
+    "https://house-rent-ease.netlify.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.127.0.0.1",
     "https://house-rent-backend.onrender.com",
+    "https://house-rent-ease.netlify.app",
 ]
 
 
