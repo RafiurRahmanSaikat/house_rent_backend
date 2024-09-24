@@ -157,13 +157,18 @@ class ReviewViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ReviewSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
-    def create(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            return Response(
-                {"message": "You have to login."}, status=status.HTTP_401_UNAUTHORIZED
-            )
-        else:
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        advertisement_id = self.request.query_params.get("advertisement")
+        # print(advertisement_id)
+        if advertisement_id:
+            queryset = queryset.filter(advertisement=advertisement_id)
+        return queryset
 
+    # print(queryset)
+
+    def create(self, request, *args, **kwargs):
+        try:
             serializer = self.serializer_class(data=request.data)
             if serializer.is_valid():
                 advertisement = serializer.validated_data.get("advertisement")
@@ -178,7 +183,8 @@ class ReviewViewSet(viewsets.ModelViewSet):
                     {"message": "Review added successfully.", "review_id": review.id},
                     status=status.HTTP_201_CREATED,
                 )
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class HandleRentRequestViewSet(viewsets.ModelViewSet):
