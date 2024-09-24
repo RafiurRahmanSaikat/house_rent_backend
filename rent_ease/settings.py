@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+import dj_database_url
 import environ
 
 env = environ.Env()
@@ -105,7 +106,7 @@ WSGI_APPLICATION = "rent_ease.wsgi.application"
 # }
 DATABASES = {
     "default": dj_database_url.config(
-        default=env("LIBRARY_DATABASE"),
+        default=env("DATABASE"),
     )
 }
 
