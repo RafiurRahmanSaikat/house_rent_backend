@@ -31,10 +31,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
 ]
-# CSRF_TRUSTED_ORIGINS = [
-#     "https://library-management-8dqd.onrender.com",
-#     "https://*.127.0.0.1",
-# ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.127.0.0.1",
+    "https://house-rent-backend.onrender.com",
+]
 
 
 # Email Settings
