@@ -80,7 +80,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "rent_ease.urls"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -110,9 +110,7 @@ WSGI_APPLICATION = "rent_ease.wsgi.application"
 #     }
 # }
 DATABASES = {
-    "default": dj_database_url.config(
-        default=env("DATABASE"),
-    )
+    "default": dj_database_url.config(default=env("DATABASE"), conn_max_age=600)
 }
 
 # Password validation
@@ -164,6 +162,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 MEDIA_URL = "/media/"
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
