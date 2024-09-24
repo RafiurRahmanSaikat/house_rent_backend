@@ -9,10 +9,8 @@ environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 
 
@@ -20,8 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = True
-TIME_ZONE = "Asia/Dhaka"
-USE_TZ = True
+
 ALLOWED_HOSTS = [
     "*",
     "https://*.127.0.0.1",
