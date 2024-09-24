@@ -29,6 +29,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
     "https://house-rent-ease.netlify.app",
+    "https://house-rent-backend.onrender.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
