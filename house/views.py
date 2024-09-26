@@ -45,6 +45,7 @@ class HouseViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)
+        print("Add  House", serializer)
         serializer.is_valid(raise_exception=True)
         serializer.save(owner=request.user.account)
 

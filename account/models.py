@@ -10,7 +10,8 @@ class UserAccount(models.Model):
     )
     user = models.OneToOneField(User, related_name="account", on_delete=models.CASCADE)
     address = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="account/user/profile/")
+    # image = models.ImageField(upload_to="account/user/profile/")
+    image = models.TextField()
     mobile_number = models.CharField(max_length=12)
     is_verified = models.BooleanField(default=False)
     verification_token = models.UUIDField(

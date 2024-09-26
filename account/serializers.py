@@ -11,7 +11,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         choices=[("Admin", "Admin"), ("User", "User")]
     )
     address = serializers.CharField(required=True)
-    image = serializers.ImageField(required=True)
+    image = serializers.CharField(required=True)
     mobile_number = serializers.CharField(required=True)
 
     class Meta:
