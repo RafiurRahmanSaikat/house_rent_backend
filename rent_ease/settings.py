@@ -36,6 +36,8 @@ CORS_ALLOWED_ORIGINS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.127.0.0.1",
+    "http://localhost:3000",
+    "http://localhost:5173",
     "https://house-rent-backend.onrender.com",
     "https://house-rent-ease.netlify.app",
 ]
@@ -109,7 +111,7 @@ WSGI_APPLICATION = "rent_ease.wsgi.application"
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
-
+#  new Database Added
 # ! LIVE DATABASE
 DATABASES = {
     "default": dj_database_url.config(default=env("DATABASE"), conn_max_age=600)
